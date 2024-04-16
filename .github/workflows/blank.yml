@@ -34,3 +34,6 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+      - name: Print modified file
+        run: |
+          echo "The first modified file is: ${{ github.event.head_commit.modified[0] }}"
