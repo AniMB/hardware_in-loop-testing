@@ -36,4 +36,4 @@ jobs:
           echo test, and deploy your project.
       - name: Print modified file
         run: |
-          echo "The first modified file is: ${{ github.event.push.added[0] }}"
+          echo "The first modified file is: ${{ github.event.push.added[0] }}" 
