@@ -7,11 +7,10 @@ on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+  
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+env:
+  LAST_COMMIT: ${{ github.event.head_commit.id }}
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -36,4 +35,5 @@ jobs:
           echo test, and deploy your project.
       - name: Print modified file
         run: |
-          echo "The first modified file is: ${{ github.event.commits.added }}" 
+          echo "The modified file is:"
+          git show $LAST_COMMIT
