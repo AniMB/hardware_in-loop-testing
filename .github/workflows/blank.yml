@@ -36,4 +36,4 @@ jobs:
       - name: Print modified file
         run: |
           echo "The modified file is:"
-          git show --no-patch --pretty=format:%B $LAST_COMMIT
+          git show -p $LAST_COMMIT
