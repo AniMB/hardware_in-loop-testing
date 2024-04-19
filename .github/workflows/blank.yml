@@ -36,4 +36,4 @@ jobs:
       - name: Print modified file
         run: |
           echo "The modified file is:"
-          git cat-file -p $LAST_COMMIT
+          git show --n0-patch $LAST_COMMIT
