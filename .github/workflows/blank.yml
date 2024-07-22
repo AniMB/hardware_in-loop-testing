@@ -33,4 +33,7 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
       - name: Print modified file
-        run: git pull origin main 
+        run: |
+          cd /home/animb/actions-runner
+          git pull origin main 
+          export changed = 1
