@@ -33,4 +33,4 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
       - name: Print modified file
-        run: git clone https://github.com/AniMB/test-repository.git 
+        run: git clone https://github.com/AniMB/test-repository.git /home/animb/Desktop
