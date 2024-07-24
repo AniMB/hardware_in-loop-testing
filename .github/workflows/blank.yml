@@ -36,4 +36,7 @@ jobs:
         run: |
           cd /home/animb/actions-runner
           git pull origin main 
-          export changed = 1
+          make
+          make flash
+          sleep 3
+          make clean
