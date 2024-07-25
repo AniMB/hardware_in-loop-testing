@@ -34,9 +34,8 @@ jobs:
           echo test, and deploy your project.
       - name: Print modified file
         run: |
-          cd /home/animb/actions-runner
-          git pull origin main 
-          make
+          cd /home/animb/actions-runner/test-repository/test_repo
+          git pull origin main
           make flash
           sleep 3
           make clean
