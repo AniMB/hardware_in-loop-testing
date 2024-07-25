@@ -34,7 +34,7 @@ jobs:
           echo test, and deploy your project.
       - name: Print modified file
         run: |
-          cd /home/animb/actions-runner
+          cd /home/animb/actions-runner/test-repository
           git pull origin main 
           make
           make flash
