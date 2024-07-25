@@ -36,6 +36,7 @@ jobs:
         run: |
           cd /home/animb/actions-runner/test-repository/test_repo
           git pull origin main
+          make
           make flash
           sleep 3
           make clean
