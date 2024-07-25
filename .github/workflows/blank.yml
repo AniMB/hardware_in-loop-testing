@@ -35,8 +35,7 @@ jobs:
       - name: Print modified file
         run: |
           cd /home/animb/actions-runner/test-repository
-          git pull origin main 
-          make
+          git pull origin main
           make flash
           sleep 3
           make clean
