@@ -39,5 +39,6 @@ jobs:
           cd /home/animb/actions-runner/test-repository/test_repo/Core
           make
           make flash
+          echo Uploaded Code
           sleep 3
           make clean
