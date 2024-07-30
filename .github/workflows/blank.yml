@@ -36,7 +36,7 @@ jobs:
         run: |
           cd /home/animb/actions-runner/test-repository/test_repo
           git pull origin main
-          cd /home/animb/actions-runner/test-repository/test_repo/Core
+          cd /home/animb/actions-runner/test-repository/test_repo
           make
           make flash
           echo Uploaded Code
