@@ -37,7 +37,7 @@ jobs:
           cd /home/animb/actions-runner/test-repository/test_repo
           git pull origin main
           cd /home/animb/actions-runner/test-repository/test_repo/Debug
-          arm-none-eabi-objcopy -O binary test-repo.elf test_repo.bin
+          arm-none-eabi-objcopy -O binary test_repo.elf test_repo.bin
           st-flash write test_repo.bin 0x8000000
           echo Uploaded Code
           sleep 3
