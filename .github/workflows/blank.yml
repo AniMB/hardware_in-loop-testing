@@ -41,4 +41,4 @@ jobs:
           st-flash write test_repo.bin 0x8000000
           echo Uploaded Code
           sleep 3
-          make clean
+          
