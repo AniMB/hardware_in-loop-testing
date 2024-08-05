@@ -390,6 +390,7 @@ int main(void)
  80005e6:	f44f 4180 	mov.w	r1, #16384	@ 0x4000
  80005ea:	4805      	ldr	r0, [pc, #20]	@ (8000600 <main+0x38>)
  80005ec:	f001 fc84 	bl	8001ef8 <HAL_GPIO_WritePin>
+
 	  HAL_GPIO_WritePin(GPIOB, LD2_Pin, GPIO_PIN_SET);
  80005f0:	2201      	movs	r2, #1
  80005f2:	2102      	movs	r1, #2
