@@ -585,12 +585,12 @@ Disassembly of section .text:
  8000888:	b960      	cbnz	r0, 80008a4 <main+0x220>
  800088a:	4c08      	ldr	r4, [pc, #32]	@ (80008ac <main+0x228>)
  800088c:	4620      	mov	r0, r4
- 800088e:	2201      	movs	r2, #1
+ 800088e:	2200      	movs	r2, #0
  8000890:	f44f 4180 	mov.w	r1, #16384	@ 0x4000
  8000894:	f000 fe30 	bl	80014f8 <HAL_GPIO_WritePin>
  8000898:	2201      	movs	r2, #1
- 800089a:	2102      	movs	r1, #2
- 800089c:	4620      	mov	r0, r4
+ 800089a:	4620      	mov	r0, r4
+ 800089c:	4611      	mov	r1, r2
  800089e:	f000 fe2b 	bl	80014f8 <HAL_GPIO_WritePin>
  80008a2:	e7f3      	b.n	800088c <main+0x208>
  80008a4:	b672      	cpsid	i
