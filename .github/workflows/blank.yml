@@ -36,7 +36,7 @@ jobs:
         run: |
           cd /home/animb/actions-runner/test-repository/test_repo
           git pull origin main
-          cd /home/animb/actions-runner/test-repository/test_repo/Debug
+          cd /home/animb/actions-runner/test-repository/test_repo/Release
           arm-none-eabi-objcopy -O binary test_repo.elf test_repo.bin
           st-flash write test_repo.bin 0x8000000
           echo Uploaded Code
