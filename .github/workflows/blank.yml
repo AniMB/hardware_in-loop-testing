@@ -40,8 +40,10 @@ jobs:
         run: |
           echo $(pwd)
           cd ../../../$(path)
+          echo $(pwd)
           git pull origin main
           cd ../../../$(path)/Release
+          
           arm-none-eabi-objcopy -O binary $(elf).elf $(elf)".bin
           echo Binary file ready
           st-flash write $(elf)".bin 0x8000000
