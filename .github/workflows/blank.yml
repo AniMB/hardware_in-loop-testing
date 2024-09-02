@@ -39,10 +39,10 @@ jobs:
       - name: Print modified file
         run: |
           echo $(pwd)
-          cd $(path)
+          cd ${{env.path}}
           echo $(pwd)
           git pull origin main
-          cd $(path)/Release
+          cd ${{env.path}}/Release
           
           arm-none-eabi-objcopy -O binary $(elf).elf $(elf)".bin
           echo Binary file ready
