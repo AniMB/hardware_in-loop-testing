@@ -42,11 +42,11 @@ jobs:
           cd ${{env.path}}
           echo $(pwd)
           git pull origin main
-          cd ${{env.path}}/Release
-          
-          arm-none-eabi-objcopy -O binary $(elf).elf $(elf)".bin
+          cd ${{env.path}}/Release   
+                 
+          arm-none-eabi-objcopy -O binary ${{env.elf}}.elf ${{env.elf}}.bin
           echo Binary file ready
-          st-flash write $(elf)".bin 0x8000000
+          st-flash write ${{env.elf}}.bin 0x8000000
           echo Uploaded Code
           sleep 3
           st-flash reset
