@@ -38,7 +38,7 @@ Add the file paths to the YAML file.
 To execute this project to the location of the self hosted runner loaction and execute `./run/sh`.
 
 ## Issues 
-Incase the runner is deleted, reinstall the runeer at the same location. To do this, skip the `first command'. 
+Incase the runner is deleted, reinstall the runeer at the same location. To do this, skip the `first command`. 
 If you get an error while configuring, execute
 ```
 rm -f .runnner
