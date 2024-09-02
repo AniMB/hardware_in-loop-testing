@@ -34,11 +34,11 @@ This can be setup by going to the setting -> actions -> runner as setup a linux 
     ```
 ## Execution
 The worklfow on the yaml file starts the moment a push is made to main. 
-Add the file paths to the YAML file.
+Add the `file paths` to the YAML file.
 To execute this project to the location of the self hosted runner loaction and execute `./run/sh`.
 
-## Issues 
-Incase the runner is deleted, reinstall the runeer at the same location. To do this, skip the `first command`. 
+## Precautions
+Incase the runner is deleted, reinstall the runner at the same location. To do this, skip the `first command`. 
 If you get an error while configuring, execute
 ```
 rm -f .runnner
