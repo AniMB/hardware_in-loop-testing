@@ -32,9 +32,19 @@ This can be setup by going to the setting -> actions -> runner as setup a linux 
     ```
     sudo apt-get install stlink-tools
     ```
-## Working
+## Execution
 The worklfow on the yaml file starts the moment a push is made to main. 
-To execute this go to the location of the self hosted runner loaction and execute `./run/sh`.
+Add the file paths to the YAML file.
+To execute this project to the location of the self hosted runner loaction and execute `./run/sh`.
+
+## Issues 
+Incase the runner is deleted, reinstall the runeer at the same location. To do this, skip the `first command'. 
+If you get an error while configuring, execute
+```
+rm -f .runnner
+rm -f config.sh
+```
+
 
 
 

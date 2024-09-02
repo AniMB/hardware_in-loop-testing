@@ -8,7 +8,11 @@ on:
   push:
     branches: [ "main" ]
   
-
+env:
+  ##path to STM32 folder
+  path: "test-repository/test_repo"
+  ## name of STM32 folder
+  elf: "test_repo"
 
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -35,12 +39,12 @@ jobs:
       - name: Print modified file
         run: |
           echo $(pwd)
-          cd /home/animb/actions-runner/test-repository/test_repo
+          cd ../../../$(path)
           git pull origin main
-           cd /home/animb/actions-runner/test-repository/test_repo/Release
-          arm-none-eabi-objcopy -O binary test_repo.elf test_repo.bin
+          cd ../../../$(path)/Release
+          arm-none-eabi-objcopy -O binary $(elf).elf $(elf)".bin
           echo Binary file ready
-          st-flash write test_repo.bin 0x8000000
+          st-flash write $(elf)".bin 0x8000000
           echo Uploaded Code
           sleep 3
           st-flash reset
