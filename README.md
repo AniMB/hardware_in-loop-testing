@@ -41,6 +41,7 @@ To execute this project to the location of the self hosted runner loaction and e
 Incase the runner is deleted, reinstall the runner at the same location. To do this, skip the `first command`. 
 If you get an error while configuring, execute
 ```
+ls -a
 rm -f .runnner
 rm -f config.sh
 ```
