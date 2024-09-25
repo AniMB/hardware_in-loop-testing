@@ -12,7 +12,7 @@ This can be setup by going to the setting -> actions -> runner as setup a linux 
 4. Libraries
     - Setting up printf and scanf using this [website](https://shawnhymel.com/1873/how-to-use-printf-on-stm32/)
     - Installing OpenOCD using the code below
-    ```
+    ``` 
         git clone git://git.code.sf.net/p/openocd/code
         cd code/
         ./bootstrap
