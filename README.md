@@ -1,6 +1,11 @@
 # Hardware-in-loop
 Hardware in loop allows remote code uploading onto STM32 boards without physical presence near the boards.
 
+# NOTE
+When setting up a new project, remember to enable external builder and generate make files automatically in STM32CUBE IDE. You can do this by right-clicking project → Properties → C/C++ Build and checking the two boxes. 
+
+(VERY IMPORTANT BUILD WONT WORK ON RPI WITHOUT THIS)
+
 ## Mission
 This project uses a Raspberry Pi as a hub to remotely pull code from Git Hub and upload code to the STM32 board. The aim is to facilitate the rapid development of code.
 
@@ -28,6 +33,10 @@ This can be set up by going to the settings -> actions -> runner and setting up 
    ```
    sudo apt install gcc-arm-none-eabi
    ```
+   - OpenOCD requires jimtcl & other build dependencies on RpiOS, install them first:
+        - do `sudo nano /etc/apt/sources.list` and uncomment the apt-get sources (last three links)
+        - run `sudo apt-get update`
+        - now `sudo apt-get build-dep openocd`
     - Installing OpenOCD using the code below
     ``` 
         git clone git://git.code.sf.net/p/openocd/code
@@ -45,6 +54,11 @@ This can be set up by going to the settings -> actions -> runner and setting up 
     KERNEL=="tty[A-Z]*[0-9]", MODE="0666"
     SUBSYSTEM=="usb", ATTRS{idVendor}=="0483", MODE="0666"
     ```
+
+    Install RPI GPIO library
+    ```
+    sudo apt-get install python3-rpi.gpio
+    ```
    
 ## Execution
 The worklfow on the yaml file starts when a push is made to main. 
@@ -60,7 +74,7 @@ rm -f .runnner
 rm -f config.sh
 ```
 
-
+Run tests by doing `python run_test.py my_test_case.json --input-values "override_inputs.json"`
 
 
 
