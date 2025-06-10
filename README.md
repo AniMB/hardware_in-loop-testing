@@ -1,17 +1,23 @@
 # Hardware-in-loop
 Hardware in loop allows remote code uploading onto STM32 boards without physical presence near the boards.
 
+
 ## Mission
 This project uses a Raspberry Pi as a hub to remotely pull code from Git Hub and upload code to the STM32 board. The aim is to facilitate the rapid development of code.
 
 ## Requirements
 1. An STM32 board
+When setting up a new project, remember to enable external builder and generate make files automatically in STM32CUBE IDE. You can do this by right-clicking project → Properties → C/C++ Build and checking the two boxes.    
+
+(VERY IMPORTANT BUILD WONT WORK ON RPI WITHOUT THIS)  
+<!-- Special thanks to @tanujdargan -->
 2. A Raspberry Pi
 3. Github Actions Runner
-This can be set up by going to the settings -> actions -> runner and setting up a Linux runner. Follow all the commands '''**except the last command**''' which executes the `run.sh` shell script. 
+This can be set up by going to the settings -> actions -> runner and setting up a Linux runner. Follow all the commands '''**except the last command**''' which executes the `run.sh` shell script.   
 4. Libraries
-    - Setting up printf and scanf using this [website](https://shawnhymel.com/1873/how-to-use-printf-on-stm32/)
-    - Run this sudo command to ensure your system's package list is up to date:
+
+- Setting up printf and scanf using this [website](https://shawnhymel.com/1873/how-to-use-printf-on-stm32/)
+- Run this sudo command to ensure your system's package list is up to date:
    ```
    sudo apt update
    sudo apt-get update
@@ -28,7 +34,12 @@ This can be set up by going to the settings -> actions -> runner and setting up 
    ```
    sudo apt install gcc-arm-none-eabi
    ```
-    - Installing OpenOCD using the code below
+  - OpenOCD requires jimtcl & other build dependencies on RpiOS, install them first:
+    - do `sudo nano /etc/apt/sources.list` and uncomment the apt-get sources (last three links)
+    - run `sudo apt-get update`
+    - now `sudo apt-get build-dep openocd`  
+<!-- Special thanks to @tanujdargan -->
+- Installing OpenOCD using the code below
     ``` 
         git clone git://git.code.sf.net/p/openocd/code
         cd code/
